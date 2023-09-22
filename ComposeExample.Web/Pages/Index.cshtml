@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @if (Model.Movies.Any())
+    {
+        <ul class="list-group list-group-flush">
+            @foreach (var movie in Model.Movies)
+            {
+                <li class="list-group-item">@movie.Title</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No movies were found in the database.</p>
+    }
+</div>
